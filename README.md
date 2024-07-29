@@ -6,10 +6,39 @@ This project is a FastAPI-based web application that fetches and visualizes clim
 
 ## Features
 
-- Fetch monthly average temperature data from the CDS API
-- Process and analyze temperature data to provide statistics such as average, minimum, and maximum temperatures
-- RESTful API endpoint to retrieve processed climate data
-- Error handling and logging for robust operation
+- Data Retrieval:
+  - Fetch monthly average temperature data from the Copernicus Climate Data Store (CDS) API
+  - Support for specifying year and month for data retrieval
+
+- Data Processing:
+  - Process and analyze temperature data to provide comprehensive statistics
+  - Calculate average, median, minimum, and maximum temperatures
+  - Compute standard deviation for temperature variation
+  - Determine 25th and 75th percentile temperatures
+  - Provide latitude and longitude ranges for the data
+
+- Data Visualization:
+  - Interactive bar chart showing minimum, average, and maximum temperatures
+  - Color-coded bars (blue for negative, red for positive temperatures)
+  - Zero line for clear distinction between positive and negative values
+  - Value labels on bars for easy reading
+  - Labeled axes with temperature units (°C)
+
+- API Endpoints:
+  - RESTful API endpoint to retrieve processed climate data
+  - Swagger UI documentation for easy API exploration and testing
+
+- Error Handling and Logging:
+  - Robust error handling for data retrieval and processing
+  - Detailed logging for troubleshooting and monitoring
+
+- Frontend:
+  - Simple and clean HTML interface for data visualization
+  - Integration of D3.js for creating dynamic and responsive charts
+
+- Backend:
+  - FastAPI framework for high-performance, easy-to-use API development
+  - Efficient serving of static files for frontend assets
 
 ## Prerequisites
 
@@ -133,7 +162,7 @@ Contributions to this project are welcome. Please follow these steps:
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License
 
 ## Acknowledgments
 
