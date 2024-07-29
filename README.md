@@ -2,6 +2,8 @@
 
 This project is a FastAPI-based web application that fetches and visualizes climate data from the Copernicus Climate Data Store (CDS). It provides an API endpoint to retrieve temperature data for a specific year and month, and processes this data to provide useful statistics.
 
+![Screenshot](screenshot.png)
+
 ## Features
 
 - Fetch monthly average temperature data from the CDS API
