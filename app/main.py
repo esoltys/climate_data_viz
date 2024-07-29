@@ -1,13 +1,13 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
+from app.api import endpoints
 
 app = FastAPI()
 
 # Mount the static files directory
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-# Import and include API routes
-from app.api import endpoints
+# Include the API routes
 app.include_router(endpoints.router)
 
 @app.get("/")

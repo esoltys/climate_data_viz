@@ -1,5 +1,3 @@
-# Placeholder functions for Azure services
-
 def generate_forecast(data: list):
     # Placeholder function for generating forecasts
     print("Generating forecast (placeholder)")
