@@ -8,6 +8,7 @@ This project is a FastAPI-based web application that fetches and visualizes clim
 
 - Data Retrieval:
   - Fetch monthly average temperature data from the Copernicus Climate Data Store (CDS) API
+  - Cache results for 24 hours
   - Support for specifying year and month for data retrieval
 
 - Data Processing:
