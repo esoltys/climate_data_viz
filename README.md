@@ -96,7 +96,6 @@ Before you begin, ensure you have met the following requirements:
    ```
 
 Note: The current implementation uses fixed data for July 2023. To visualize data for different months or years, you'll need to modify the `main` function in `static/js/visualization.js`.
-   ```
 
 ## Project Structure
 
