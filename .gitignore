@@ -165,6 +165,7 @@ logs/
 *.tmp
 *.bak
 *.swp
+cache/
 
 # API keys
 .cdsapirc

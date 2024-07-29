@@ -3,11 +3,19 @@ import xarray as xr
 import os
 import logging
 import tempfile
+from app.utils.cache_utils import get_cached_data, cache_data
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 def fetch_temperature_data(year: int, month: int):
+    # Check cache first
+    cached_data = get_cached_data(year, month)
+    if cached_data:
+        logger.info(f"Using cached data for {year}-{month}")
+        return cached_data
+
+    logger.info(f"Fetching new data for {year}-{month}")
     c = cdsapi.Client()
 
     try:
@@ -48,14 +56,19 @@ def fetch_temperature_data(year: int, month: int):
         # Remove the temporary file
         os.unlink(temp_filename)
 
-        # Return a dictionary with the data
-        return {
+        # Prepare the data to be returned
+        data = {
             'year': year,
             'month': month,
             'temperature': temp_data,
             'latitude': lat,
             'longitude': lon
         }
+
+        # Cache the data
+        cache_data(year, month, data)
+
+        return data
     
     except Exception as e:
         logger.error(f"Error fetching data: {str(e)}")
