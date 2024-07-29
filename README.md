@@ -52,11 +52,50 @@ Before you begin, ensure you have met the following requirements:
    uvicorn app.main:app --reload
    ```
 
-2. Open your web browser and navigate to `http://127.0.0.1:8000/docs` to view the Swagger UI documentation for the API.
+2. Access the API:
+   - Open your web browser and navigate to `http://127.0.0.1:8000/docs` to view the Swagger UI documentation for the API.
+   - Use the `/api/temperature` endpoint to retrieve temperature data for a specific year and month:
+     ```
+     GET http://127.0.0.1:8000/api/temperature?year=2023&month=7
+     ```
 
-3. Use the `/api/temperature` endpoint to retrieve temperature data for a specific year and month:
+3. View the Data Visualization:
+   - Open your web browser and navigate to `http://127.0.0.1:8000/static/index.html`
+   - You will see a bar chart displaying the minimum, average, and maximum temperatures for the specified month and year (currently set to July 2023).
+   - The chart includes:
+     - Red bars for positive temperatures
+     - Blue bars for negative temperatures
+     - A zero line to clearly distinguish between positive and negative values
+     - Value labels on top of each bar for easy reading
+     - Y-axis labeled with the temperature unit (°C)
+
+4. Interpret the Visualization:
+   - The x-axis shows three categories: Min (minimum temperature), Avg (average temperature), and Max (maximum temperature).
+   - The y-axis represents the temperature in Celsius.
+   - Each bar's height corresponds to the temperature value it represents.
+   - The chart title indicates the year and month of the data being displayed.
+
+5. API Response Format:
+   When using the `/api/temperature` endpoint, you'll receive a JSON response with the following structure:
+   ```json
+   {
+     "year": 2023,
+     "month": 7,
+     "average_temperature": 8.64,
+     "median_temperature": 9.12,
+     "min_temperature": -64.73,
+     "max_temperature": 41.73,
+     "std_deviation": 22.18,
+     "unit": "Celsius",
+     "data_points": 73728,
+     "latitude_range": [-90.0, 90.0],
+     "longitude_range": [0.0, 359.75],
+     "25th_percentile": -8.31,
+     "75th_percentile": 24.89
+   }
    ```
-   GET http://127.0.0.1:8000/api/temperature?year=2023&month=7
+
+Note: The current implementation uses fixed data for July 2023. To visualize data for different months or years, you'll need to modify the `main` function in `static/js/visualization.js`.
    ```
 
 ## Project Structure
