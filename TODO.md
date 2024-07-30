@@ -29,23 +29,8 @@ Potential next steps we could consider:
 
 8. AI Integration:
    - Generate forecasts
-   - Detect anomalies
+   - Detect anomaliesDF
 
 9. Documentation:
    - Create API documentation using tools like Swagger UI (which FastAPI supports out of the box).
 
----
-
-Here's an explanation of each package in the `requirements.txt`:
-
-1. `fastapi`: The web framework we're using for building APIs.
-2. `uvicorn`: ASGI server, used to run FastAPI applications.
-3. `cdsapi`: Client to access Copernicus Climate Data Store.
-4. `xarray`: For working with multi-dimensional arrays, particularly useful for climate data.
-5. `netCDF4`: For reading and writing NetCDF files, a common format for climate data.
-6. `pandas`: For data manipulation and analysis.
-7. `matplotlib`: For creating static, animated, and interactive visualizations.
-8. `azure-ai-anomalydetector`: Azure's Anomaly Detector client library.
-9. `python-dotenv`: To load environment variables from a .env file.
-10. `pydantic`: For data validation, used heavily by FastAPI.
-11. `requests`: For making HTTP requests, which might be useful for additional API integrations.

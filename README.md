@@ -130,9 +130,7 @@ This project would not have been possible without the following open-source libr
 - [Uvicorn](https://www.uvicorn.org/) for the ASGI server
 - [cdsapi](https://pypi.org/project/cdsapi/) for accessing the Copernicus Climate Data Store
 - [xarray](http://xarray.pydata.org/) for handling multi-dimensional arrays and NetCDF data
-- [pandas](https://pandas.pydata.org/) for data manipulation and analysis
 - [NumPy](https://numpy.org/) for numerical computing
-- [Azure Anomaly Detector](https://azure.microsoft.com/en-us/services/cognitive-services/anomaly-detector/) for anomaly detection capabilities
 - [python-dotenv](https://pypi.org/project/python-dotenv/) for managing environment variables
 - [Pydantic](https://pydantic-docs.helpmanual.io/) for data validation
 - [Requests](https://docs.python-requests.org/) for making HTTP requests
