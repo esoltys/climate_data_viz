@@ -29,7 +29,7 @@ Potential next steps we could consider:
 
 8. AI Integration:
    - Generate forecasts
-   - Detect anomaliesDF
+   - Detect anomalies
 
 9. Documentation:
    - Create API documentation using tools like Swagger UI (which FastAPI supports out of the box).
