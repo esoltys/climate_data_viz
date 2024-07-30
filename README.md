@@ -18,13 +18,6 @@ This project is a FastAPI-based web application that fetches and visualizes clim
   - Determine 25th and 75th percentile temperatures
   - Provide latitude and longitude ranges for the data
 
-- Data Visualization:
-  - Interactive bar chart showing minimum, average, and maximum temperatures
-  - Color-coded bars (blue for negative, red for positive temperatures)
-  - Zero line for clear distinction between positive and negative values
-  - Value labels on bars for easy reading
-  - Labeled axes with temperature units (°C)
-
 - API Endpoints:
   - RESTful API endpoint to retrieve processed climate data
   - Swagger UI documentation for easy API exploration and testing
@@ -35,7 +28,7 @@ This project is a FastAPI-based web application that fetches and visualizes clim
 
 - Frontend:
   - Simple and clean HTML interface for data visualization
-  - Integration of D3.js for creating dynamic and responsive charts
+  - Integration of Apache ECharts for creating dynamic and responsive charts
 
 - Backend:
   - FastAPI framework for high-performance, easy-to-use API development
@@ -82,30 +75,17 @@ Before you begin, ensure you have met the following requirements:
    uvicorn app.main:app --reload
    ```
 
-2. Access the API:
+2. View the Data Visualization:
+   - Open your web browser and navigate to `http://127.0.0.1:8000/static/index.html`
+
+3. Access the API:
    - Open your web browser and navigate to `http://127.0.0.1:8000/docs` to view the Swagger UI documentation for the API.
    - Use the `/api/temperature` endpoint to retrieve temperature data for a specific year and month:
      ```
      GET http://127.0.0.1:8000/api/temperature?year=2023&month=7
      ```
 
-3. View the Data Visualization:
-   - Open your web browser and navigate to `http://127.0.0.1:8000/static/index.html`
-   - You will see a bar chart displaying the minimum, average, and maximum temperatures for the specified month and year (currently set to July 2023).
-   - The chart includes:
-     - Red bars for positive temperatures
-     - Blue bars for negative temperatures
-     - A zero line to clearly distinguish between positive and negative values
-     - Value labels on top of each bar for easy reading
-     - Y-axis labeled with the temperature unit (°C)
-
-4. Interpret the Visualization:
-   - The x-axis shows three categories: Min (minimum temperature), Avg (average temperature), and Max (maximum temperature).
-   - The y-axis represents the temperature in Celsius.
-   - Each bar's height corresponds to the temperature value it represents.
-   - The chart title indicates the year and month of the data being displayed.
-
-5. API Response Format:
+4. API Response Format:
    When using the `/api/temperature` endpoint, you'll receive a JSON response with the following structure:
    ```json
    {
@@ -127,11 +107,15 @@ Before you begin, ensure you have met the following requirements:
 
 Note: The current implementation uses fixed data for July 2023. To visualize data for different months or years, you'll need to modify the `main` function in `static/js/visualization.js`.
 
-## Running Tests
+## Running Tests and Type Checking
 
 To run the tests, use the following command:
 
 `pytest`
+
+To check type annotations:
+
+`pyright`
 
 ## License
 
@@ -153,7 +137,7 @@ This project would not have been possible without the following open-source libr
 - [Pydantic](https://pydantic-docs.helpmanual.io/) for data validation
 - [Requests](https://docs.python-requests.org/) for making HTTP requests
 - [pytest](https://docs.pytest.org/) for testing
-- [D3.js](https://d3js.org/) for creating dynamic, interactive data visualizations in web browsers
+- [Apache ECharts](https://echarts.apache.org/) for creating dynamic, interactive data visualizations in web browsers
 
 These tools and libraries have greatly contributed to the development and success of this project.
 
