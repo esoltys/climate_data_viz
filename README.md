@@ -139,6 +139,8 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## Acknowledgments
 
+This project would not have been possible without the following open-source libraries and services:
+
 - [Copernicus Climate Data Store](https://cds.climate.copernicus.eu/) for providing the climate data
 - [FastAPI](https://fastapi.tiangolo.com/) for the web framework
 - [Uvicorn](https://www.uvicorn.org/) for the ASGI server
@@ -146,11 +148,12 @@ This project is open source and available under the [MIT License](LICENSE).
 - [xarray](http://xarray.pydata.org/) for handling multi-dimensional arrays and NetCDF data
 - [pandas](https://pandas.pydata.org/) for data manipulation and analysis
 - [NumPy](https://numpy.org/) for numerical computing
-- [Matplotlib](https://matplotlib.org/) for creating static, animated, and interactive visualizations
 - [Azure Anomaly Detector](https://azure.microsoft.com/en-us/services/cognitive-services/anomaly-detector/) for anomaly detection capabilities
 - [python-dotenv](https://pypi.org/project/python-dotenv/) for managing environment variables
 - [Pydantic](https://pydantic-docs.helpmanual.io/) for data validation
 - [Requests](https://docs.python-requests.org/) for making HTTP requests
 - [pytest](https://docs.pytest.org/) for testing
 - [D3.js](https://d3js.org/) for creating dynamic, interactive data visualizations in web browsers
+
+These tools and libraries have greatly contributed to the development and success of this project.
 
