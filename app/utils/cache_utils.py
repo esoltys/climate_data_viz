@@ -1,11 +1,12 @@
 import os
 import json
 from datetime import datetime, timedelta
+from typing import Optional, Dict, Any
 
 CACHE_DIR = "cache"
 CACHE_DURATION = timedelta(days=1)  # Cache data for 1 day
 
-def get_cached_data(year: int, month: int):
+def get_cached_data(year: int, month: int) -> Optional[Dict[str, Any]]:
     cache_file = os.path.join(CACHE_DIR, f"temp_data_{year}_{month}.json")
     if os.path.exists(cache_file):
         with open(cache_file, 'r') as f:
@@ -18,7 +19,7 @@ def get_cached_data(year: int, month: int):
     
     return None
 
-def cache_data(year: int, month: int, data):
+def cache_data(year: int, month: int, data: Dict[str, Any]) -> None:
     if not os.path.exists(CACHE_DIR):
         os.makedirs(CACHE_DIR)
     

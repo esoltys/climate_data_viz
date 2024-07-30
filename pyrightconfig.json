@@ -1,0 +1,16 @@
+{
+    "include": [
+      "app"
+    ],
+    "exclude": [
+      "**/node_modules",
+      "**/__pycache__"
+    ],
+    "ignore": [
+      "app/tests"
+    ],
+    "reportMissingImports": true,
+    "reportMissingTypeStubs": false,
+    "pythonVersion": "3.7",
+    "pythonPlatform": "Windows"
+  }

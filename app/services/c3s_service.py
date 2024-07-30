@@ -3,12 +3,13 @@ import xarray as xr
 import os
 import logging
 import tempfile
+from typing import Dict, Any, Union
 from app.utils.cache_utils import get_cached_data, cache_data
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-def fetch_temperature_data(year: int, month: int):
+def fetch_temperature_data(year: int, month: int) -> Union[Dict[str, Any], Dict[str, Union[str, int]]]:
     # Check cache first
     cached_data = get_cached_data(year, month)
     if cached_data:

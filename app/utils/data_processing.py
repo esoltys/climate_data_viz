@@ -1,9 +1,10 @@
 import numpy as np
 import logging
+from typing import Dict, Any, Union
 
 logger = logging.getLogger(__name__)
 
-def process_temperature_data(raw_data):
+def process_temperature_data(raw_data: Dict[str, Any]) -> Union[Dict[str, Any], Dict[str, Union[str, float, int, list]]]:
     if 'error' in raw_data:
         logger.error(f"Error in raw data: {raw_data['error']}")
         return raw_data  # Return the error if there was one
