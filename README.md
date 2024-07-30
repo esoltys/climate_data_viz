@@ -127,40 +127,6 @@ Before you begin, ensure you have met the following requirements:
 
 Note: The current implementation uses fixed data for July 2023. To visualize data for different months or years, you'll need to modify the `main` function in `static/js/visualization.js`.
 
-## Project Structure
-
-```
-climate-data-viz/
-├── app/
-│   ├── __init__.py
-│   ├── main.py
-│   ├── api/
-│   │   ├── __init__.py
-│   │   └── endpoints.py
-│   ├── services/
-│   │   ├── __init__.py
-│   │   └── c3s_service.py
-│   └── utils/
-│       ├── __init__.py
-│       └── data_processing.py
-├── static/
-│   └── index.html
-├── .gitignore
-├── README.md
-└── requirements.txt
-```
-
-## Contributing
-
-Contributions to this project are welcome. Please follow these steps:
-
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature/your-feature-name`)
-3. Make your changes
-4. Commit your changes (`git commit -am 'Add some feature'`)
-5. Push to the branch (`git push origin feature/your-feature-name`)
-6. Create a new Pull Request
-
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
@@ -169,4 +135,16 @@ This project is open source and available under the [MIT License](LICENSE).
 
 - [Copernicus Climate Data Store](https://cds.climate.copernicus.eu/) for providing the climate data
 - [FastAPI](https://fastapi.tiangolo.com/) for the web framework
-- [xarray](http://xarray.pydata.org/) for handling NetCDF data
+- [Uvicorn](https://www.uvicorn.org/) for the ASGI server
+- [cdsapi](https://pypi.org/project/cdsapi/) for accessing the Copernicus Climate Data Store
+- [xarray](http://xarray.pydata.org/) for handling multi-dimensional arrays and NetCDF data
+- [pandas](https://pandas.pydata.org/) for data manipulation and analysis
+- [NumPy](https://numpy.org/) for numerical computing
+- [Matplotlib](https://matplotlib.org/) for creating static, animated, and interactive visualizations
+- [Azure Anomaly Detector](https://azure.microsoft.com/en-us/services/cognitive-services/anomaly-detector/) for anomaly detection capabilities
+- [python-dotenv](https://pypi.org/project/python-dotenv/) for managing environment variables
+- [Pydantic](https://pydantic-docs.helpmanual.io/) for data validation
+- [Requests](https://docs.python-requests.org/) for making HTTP requests
+- [pytest](https://docs.pytest.org/) for testing
+- [D3.js](https://d3js.org/) for creating dynamic, interactive data visualizations in web browsers
+
