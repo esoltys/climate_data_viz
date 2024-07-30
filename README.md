@@ -69,15 +69,15 @@ Before you begin, ensure you have met the following requirements:
      ```
 
 5. Accept the "Terms of Use" at the bottom of the Download tab for the dataset:
-  - https://cds-beta.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-monthly-means?tab=download
-  - Currently configured for:
-    - Product type: Monthly averaged reanalysis
-    - Variable: 2m temperature
-    - Year: 2023
-    - Month: July
-    - Time: 00:00
-    - Geographical area: Whole available region
-    - Data format: NetCDF4 (Experimental)
+    - https://cds-beta.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-monthly-means?tab=download
+    - Currently configured for:
+      - Product type: Monthly averaged reanalysis
+      - Variable: 2m temperature
+      - Year: 2023
+      - Month: July
+      - Time: 00:00
+      - Geographical area: Whole available region
+      - Data format: NetCDF4 (Experimental)
 
 ## Usage
 
