@@ -25,12 +25,10 @@ Potential next steps we could consider:
    - Implement loading indicators while data is being fetched or processed
    - Provide more detailed error messages and suggestions for troubleshooting
 
-7. Upgrade to the new Beta CDS api as the current one is being deprecated in September
-
-8. AI Integration:
+7. AI Integration:
    - Generate forecasts
    - Detect anomalies
 
-9. Documentation:
+8. Documentation:
    - Create API documentation using tools like Swagger UI (which FastAPI supports out of the box).
 
