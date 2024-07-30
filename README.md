@@ -39,7 +39,7 @@ This project is a FastAPI-based web application that fetches and visualizes clim
 Before you begin, ensure you have met the following requirements:
 
 - Python 3.7 or higher
-- A Copernicus Climate Data Store (CDS) API key
+- A Copernicus Climate Data Store (CDS) Beta API key https://cds-beta.climate.copernicus.eu/how-to-api
 
 ## Installation
 
@@ -64,9 +64,20 @@ Before you begin, ensure you have met the following requirements:
    - Create a file named `.cdsapirc` in your home directory
    - Add the following content to the file, replacing `YOUR-API-KEY` with your actual CDS API key:
      ```
-     url: https://cds.climate.copernicus.eu/api/v2
+     url: https://cds-beta.climate.copernicus.eu/api
      key: YOUR-API-KEY
      ```
+
+5. Accept the "Terms of Use" at the bottom of the Download tab for the dataset:
+  - https://cds-beta.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-monthly-means?tab=download
+  - Currently configured for:
+    - Product type: Monthly averaged reanalysis
+    - Variable: 2m temperature
+    - Year: 2023
+    - Month: July
+    - Time: 00:00
+    - Geographical area: Whole available region
+    - Data format: NetCDF4 (Experimental)
 
 ## Usage
 
