@@ -127,6 +127,12 @@ Before you begin, ensure you have met the following requirements:
 
 Note: The current implementation uses fixed data for July 2023. To visualize data for different months or years, you'll need to modify the `main` function in `static/js/visualization.js`.
 
+## Running Tests
+
+To run the tests, use the following command:
+
+`pytest`
+
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
