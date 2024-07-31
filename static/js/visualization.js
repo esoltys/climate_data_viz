@@ -16,6 +16,17 @@ function createChart(data) {
             trigger: 'axis',
             axisPointer: {
                 type: 'shadow'
+            },
+            formatter: function(params) {
+                let result = `${params[0].name}<br/>`;
+                params.forEach(param => {
+                    let value = param.value;
+                    if (typeof value === 'number') {
+                        value = value.toFixed(2);
+                    }
+                    result += `${param.marker} ${param.seriesName}: ${value}°C<br/>`;
+                });
+                return result;
             }
         },
         legend: {
