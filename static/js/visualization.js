@@ -9,83 +9,81 @@ function createChart(data) {
     const option = {
         title: {
             text: `Temperature Data for ${data.year}-${data.month}`,
-            top: 0,
             left: 'center'
         },
         tooltip: {
-            trigger: 'axis',
+            trigger: 'item',
             axisPointer: {
                 type: 'shadow'
             },
             formatter: function(params) {
-                let result = `${params[0].name}<br/>`;
-                params.forEach(param => {
-                    let value = param.value;
-                    if (typeof value === 'number') {
-                        value = value.toFixed(2);
-                    }
-                    result += `${param.marker} ${param.seriesName}: ${value}°C<br/>`;
-                });
-                return result;
+                if (params.seriesName === 'boxplot') {
+                    return `Temperature Distribution<br/>
+                            Max: ${data.max_temperature.toFixed(2)}°C<br/>
+                            75th Percentile: ${data['75th_percentile'].toFixed(2)}°C<br/>
+                            Median: ${data.median_temperature.toFixed(2)}°C<br/>
+                            25th Percentile: ${data['25th_percentile'].toFixed(2)}°C<br/>
+                            Min: ${data.min_temperature.toFixed(2)}°C`;
+                } else if (params.seriesName === 'average') {
+                    return `Average: ${data.average_temperature.toFixed(2)}°C`;
+                }
             }
         },
-        legend: {
-            top: '30px',
-            left: 'center'
-        },
         grid: {
-            left: '10%',  // Increased left margin
-            right: '4%',
-            bottom: '10%',
-            top: '100px',
-            containLabel: true
+            left: '10%',
+            right: '10%',
+            bottom: '15%'
         },
         xAxis: {
             type: 'category',
-            data: ['Temperature']
+            data: ['Temperature Distribution'],
+            boundaryGap: true,
+            nameGap: 30,
+            splitArea: {
+                show: false
+            },
+            axisLabel: {
+                show: false
+            },
+            splitLine: {
+                show: false
+            }
         },
         yAxis: {
             type: 'value',
-            name: 'Temperature (°C)',  // Changed to use degree symbol
-            nameLocation: 'middle',
-            nameGap: 50,  // Increased gap for y-axis name
-            nameRotate: 90  // Rotate the label for better fit
+            name: 'Temperature (°C)',
+            splitArea: {
+                show: true
+            }
         },
         series: [
             {
-                name: 'Min',
-                type: 'bar',
-                stack: 'Temperature',
-                data: [data.min_temperature]
+                name: 'boxplot',
+                type: 'boxplot',
+                data: [
+                    [
+                        data.min_temperature,
+                        data['25th_percentile'],
+                        data.median_temperature,
+                        data['75th_percentile'],
+                        data.max_temperature
+                    ]
+                ],
+                itemStyle: {
+                    borderColor: '#1f77b4'
+                }
             },
             {
-                name: '25th Percentile',
-                type: 'bar',
-                stack: 'Temperature',
-                data: [data['25th_percentile'] - data.min_temperature]
-            },
-            {
-                name: 'Median',
-                type: 'bar',
-                stack: 'Temperature',
-                data: [data.median_temperature - data['25th_percentile']]
-            },
-            {
-                name: '75th Percentile',
-                type: 'bar',
-                stack: 'Temperature',
-                data: [data['75th_percentile'] - data.median_temperature]
-            },
-            {
-                name: 'Max',
-                type: 'bar',
-                stack: 'Temperature',
-                data: [data.max_temperature - data['75th_percentile']]
-            },
-            {
-                name: 'Average',
+                name: 'average',
                 type: 'scatter',
-                data: [data.average_temperature]
+                data: [
+                    [0, data.average_temperature]
+                ],
+                symbol: 'diamond',
+                symbolSize: 10,
+                itemStyle: {
+                    color: '#ff7f0e'
+                }
             }
         ]
     };
@@ -101,8 +99,6 @@ function createChart(data) {
         <p>Longitude Range: ${data.longitude_range[0]} to ${data.longitude_range[1]}</p>
     `;
 }
-
-
 
 // Main function to fetch data and create the chart
 async function main() {
