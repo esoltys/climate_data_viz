@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Climate Data Visualization</title>
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -37,12 +38,12 @@
     </style>
 </head>
 <body>
-    <h1>Climate Data Visualization</h1>
-    <div id="chart-container">
+    <h1 class="title">Climate Data Visualization</h1>
+    <div id="chart-container" class="box">
         <div id="chart"></div>
     </div>
-    <div id="additional-info"></div>
-    <div id="source">Source: Copernicus Climate Data Store</div>
+    <div id="additional-info" class="content"></div>
+    <div id="source" class="has-text-grey-light">Source: Copernicus Climate Data Store</div>
     <script src="/static/js/visualization.js"></script>
 </body>
 </html>
