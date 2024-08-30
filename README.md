@@ -128,6 +128,49 @@ To check type annotations:
 
 `pyright`
 
+## Architecture
+
+```mermaid
+graph TB
+    User((User))
+    
+    subgraph "Climate Data Visualization System"
+        FrontendApp["Frontend Application<br/>(HTML, JavaScript)"]
+        
+        subgraph "Backend Services"
+            APIServer["API Server<br/>(FastAPI)"]
+            DataProcessingService["Data Processing Service<br/>(Python)"]
+            CacheService["Cache Service<br/>(Python)"]
+        end
+        
+        subgraph "Data Storage"
+            FileCache[("File Cache<br/>(JSON)")]
+        end
+    end
+    
+    subgraph "External Services"
+        CDSApi["Copernicus Climate Data Store API<br/>(CDS API)"]
+    end
+    
+    User --> FrontendApp
+    FrontendApp --> APIServer
+    APIServer --> DataProcessingService
+    APIServer --> CacheService
+    CacheService --> FileCache
+    DataProcessingService --> CDSApi
+    
+    classDef frontend fill:#1168bd,stroke:#0b4884,color:#ffffff
+    classDef backend fill:#2694ab,stroke:#1a6d7d,color:#ffffff
+    classDef database fill:#2b78e4,stroke:#1a4d91,color:#ffffff
+    classDef external fill:#999999,stroke:#666666,color:#ffffff
+    
+    class FrontendApp frontend
+    class APIServer,DataProcessingService,CacheService backend
+    class FileCache database
+    class CDSApi external
+
+```
+
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
